@@ -5,7 +5,13 @@ class UsersControllerTest < ActionController::TestCase
     @user = users(:alex)
   end
 
+  test "should redirect index when not logged in" do
+    get :index
+    assert_redirected_to login_path
+  end
+
   test "should get index" do
+    login_user(@user)
     get :index
     assert_response :success
     assert_not_nil assigns(:users)

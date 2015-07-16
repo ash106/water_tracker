@@ -30,4 +30,8 @@ class DrinkTest < ActiveSupport::TestCase
     @drink.volume = 1
     assert @drink.valid?
   end
+
+  test "order should be most recent first" do
+    assert_equal drinks(:most_recent), Drink.first
+  end
 end

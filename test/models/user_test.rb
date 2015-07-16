@@ -35,4 +35,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "associated drinks should be destroyed" do
+    @user.save
+    @user.drinks.create!(volume: 8)
+    assert_difference 'Drink.count', -1 do
+      @user.destroy
+    end
+  end
 end

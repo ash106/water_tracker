@@ -23,7 +23,7 @@ class SessionsControllerTest < ActionController::TestCase
   test "should get destroy" do
     login_user(@user)
     get :destroy
-    assert_redirected_to users_path
+    assert_redirected_to root_path
     assert_equal "Logged out!", flash[:notice]
   end
 end

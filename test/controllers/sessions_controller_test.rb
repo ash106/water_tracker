@@ -24,6 +24,6 @@ class SessionsControllerTest < ActionController::TestCase
     login_user(@user)
     get :destroy
     assert_redirected_to root_path
-    assert_equal "Logged out!", flash[:notice]
+    assert_equal "Logged out", flash[:success]
   end
 end

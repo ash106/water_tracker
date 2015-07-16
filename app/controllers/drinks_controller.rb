@@ -2,8 +2,7 @@ class DrinksController < ApplicationController
   def create
     @drink = current_user.drinks.build(drink_params)
     if @drink.save
-      flash[:success] = "Drink saved!"
-      redirect_to root_url
+      redirect_to root_url, success: "Drink saved!"
     else
       render 'static_pages/home'
     end
@@ -12,8 +11,7 @@ class DrinksController < ApplicationController
   def destroy
     drink = current_user.drinks.find_by(id: params[:id])
     drink.destroy
-    flash[:success] = "Drink deleted"
-    redirect_to root_url
+    redirect_to root_url, success: "Drink deleted"
   end
 
   private

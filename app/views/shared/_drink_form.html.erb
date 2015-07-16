@@ -1,0 +1,13 @@
+<%= form_for(@drink) do |f| %>
+  <div class="field">
+    <%= f.radio_button :volume, 8, checked: true %>
+    <%= f.label :volume, "8 oz" %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :volume, 26 %>
+    <%= f.label :volume, "26 oz" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Record Drink' %>
+  </div>
+<% end %>

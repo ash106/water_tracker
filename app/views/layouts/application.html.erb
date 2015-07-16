@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to root_path, class: "navbar-brand" do %>
-            <!-- <span class="glyphicon glyphicon-tint" aria-hidden="true"></span> --> Water App
+            <!-- <span class="glyphicon glyphicon-tint" aria-hidden="true"></span> --> DmPm
           <% end %>
         </div>
 
@@ -45,10 +45,12 @@
         </div>
       </div>
     </nav>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
+    <div class="container">
+      <div>
+        <p id="notice"><%= flash[:notice] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
+      </div>
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>

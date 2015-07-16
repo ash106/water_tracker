@@ -1,11 +1,24 @@
 <% if logged_in? %>
-  <h2>Daily Total: total</h2>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <%= render 'shared/drink_form' %>
 
-  <%= render 'shared/drink_form' %>
-
-  <%= render @daily_drinks %>
+      <h1 class="center">Daily Total: <%= @total %> oz</h1>
+      
+      <ul class="list-group daily_drinks">
+        <%= render @daily_drinks %>
+      </ul>
+    </div>
+  </div>
 <% else %>
-  <h2>Hello World</h2>
+  <div class="center jumbotron">
+    <h1>Drink more water, pee more.</h1>
 
-  <p>The time is now: <%= Time.now %></p>
+    <p>
+      It's simple science. If you drink more water, you will have to pee more
+      and everyone loves a good peegasm.
+    </p>
+
+    <p><%= link_to "Sign up now!", new_user_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
 <% end %>

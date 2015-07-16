@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @drink = current_user.drinks.build
       @daily_drinks = Drink.all
+      @total = Drink.all.map(&:volume).sum
     end
   end
 end

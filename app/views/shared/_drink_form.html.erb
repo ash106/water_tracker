@@ -1,7 +1,17 @@
-<%= bootstrap_form_for(@drink) do |f| %>
-  <%= f.form_group :volume do %>
-    <%= f.radio_button :volume, 8, label: "8 oz", checked: true %>
-    <%= f.radio_button :volume, 26, label: "26 oz" %>
+<div class="row">
+  <%= simple_form_for(@drink) do |f| %>
+    <div class="col-md-6 col-md-offset-1">
+      <%= f.button :submit, "Record Drink", class: "btn-lg add_drink_button" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :volume, as: :radio_buttons, collection: [["8 oz", 8], ["26 oz", 26]], label: false %>
+      <%= f.input :volume, wrapper: :vertical_input_group, label: false do %>
+        <!-- <span class="input-group-addon">
+          <input type="radio" name="drink[volume]" id="drink_volume_custom">
+        </span> -->
+        <%= f.input_field :volume, value: 0, class: "form-control", id: "drink_volume_custom" %>
+        <span class="input-group-addon">oz</span>
+      <% end %>
+    </div>
   <% end %>
-  <%= f.submit "Record Drink", class: "btn btn-primary btn-lg" %>
-<% end %>
+</div>

@@ -143,6 +143,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     sorcery (0.9.1)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -189,6 +192,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_form
   sorcery
   spring
   turbolinks

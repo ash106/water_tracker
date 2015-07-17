@@ -6,7 +6,7 @@
       <h1 class="center">Daily Total: <%= @total %> oz</h1>
       
       <ul class="list-group daily_drinks">
-        <%= render @daily_drinks %>
+        <%= render partial: "drinks/daily_drink", collection: @daily_drinks %>
       </ul>
     </div>
   </div>

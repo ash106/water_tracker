@@ -4,9 +4,11 @@
   <%= f.email_field :email %>
   <%= f.password_field :password, help: "Must be at least 6 characters" %>
   <%= f.password_field :password_confirmation, label: "Confirm Password" %>
-  <% if @user.new_record? %>
-    <%= f.primary "Create my account" %>
-  <% else %>
-    <%= f.primary "Save changes" %>
-  <% end %>
+  <div class="text-center">
+    <% if @user.new_record? %>
+      <%= f.primary "Create my account" %>
+    <% else %>
+      <%= f.primary "Save changes" %>
+    <% end %>
+  </div>
 <% end %>

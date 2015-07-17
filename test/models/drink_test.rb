@@ -34,4 +34,10 @@ class DrinkTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal drinks(:most_recent), Drink.first
   end
+
+  test "total should return the sum of volumes of a group of drinks" do
+    drinks = []
+    4.times { drinks << Drink.new(volume: 8) }
+    assert_equal 32, Drink.total(drinks)
+  end
 end

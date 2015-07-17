@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     if logged_in?
       @drink = current_user.drinks.build
-      @daily_drinks = Drink.all
+      @daily_drinks = Drink.paginate(page: params[:page])
       @total = Drink.all.map(&:volume).sum
     end
   end

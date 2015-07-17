@@ -50,4 +50,6 @@ gem 'rack-timeout'
 gem 'sorcery'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootstrap_form'
+gem 'will_paginate', '~> 3.0.6'
+gem 'bootstrap-will_paginate'
 

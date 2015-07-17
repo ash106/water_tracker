@@ -4,8 +4,8 @@
       <%= f.button :submit, "Record Drink", class: "btn-lg add_drink_button" %>
     </div>
     <div class="col-md-4">
-      <%= f.input :volume, as: :radio_buttons, collection: [["8 oz", 8], ["26 oz", 26]], label: false %>
-      <%= f.input :volume, wrapper: :vertical_input_group, label: false do %>
+      <%= f.input :volume, as: :radio_buttons, collection: [["8 oz", 8], ["26 oz", 26]], label: false, error: false %>
+      <%= f.input :volume, wrapper: :vertical_input_group, label: false, error: "must be at least 1 oz" do %>
         <!-- <span class="input-group-addon">
           <input type="radio" name="drink[volume]" id="drink_volume_custom">
         </span> -->

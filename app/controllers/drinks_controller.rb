@@ -4,6 +4,7 @@ class DrinksController < ApplicationController
     if @drink.save
       redirect_to root_url, success: "Drink saved!"
     else
+      @daily_drinks = []
       render 'static_pages/home'
     end
   end

@@ -15,17 +15,20 @@ h1 { margin-bottom: 30px; }
 .pagination { margin-top: 10px; }
 
 .add_drink_button { 
-  margin-top: 13px; 
+  margin-top: 14px; 
   padding: 30px 30px;
 }
 
 .drink_volume.radio_buttons {
   padding-left: 1px;
   margin-bottom: 0;
+  span:first-of-type {
+    margin-bottom: 11px;
+  }
 }
 
 #new_drink {
-  margin-top: 76px;
+  margin-top: 75px;
 }
 
 // .radio-inline label {

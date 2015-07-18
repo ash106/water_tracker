@@ -1,9 +1,9 @@
 <div class="row">
   <%= simple_form_for(@drink) do |f| %>
-    <div class="col-md-6 col-md-offset-1">
+    <div class="col-xs-7 col-md-6 col-md-offset-1">
       <%= f.button :submit, "Record Drink", class: "btn-lg add_drink_button" %>
     </div>
-    <div class="col-md-4">
+    <div class="col-xs-5 col-md-4">
       <%= f.input :volume, as: :radio_buttons, collection: [["8 oz", 8], ["26 oz", 26]], label: false, error: false %>
       <%= f.input :volume, wrapper: :vertical_input_group, label: false, error: "must be at least 1 oz" do %>
         <!-- <span class="input-group-addon">

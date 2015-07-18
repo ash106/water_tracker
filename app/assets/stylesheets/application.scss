@@ -27,8 +27,10 @@ h1 { margin-bottom: 30px; }
   }
 }
 
-#new_drink {
-  margin-top: 75px;
+@media (min-width: $screen-md-min) {
+  #new_drink {
+    margin-top: 75px;
+  }
 }
 
 // .radio-inline label {

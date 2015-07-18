@@ -8,4 +8,8 @@ class Drink < ActiveRecord::Base
   def self.total(drinks)
     drinks.map(&:volume).sum
   end
+
+  def self.today
+    Drink.where("created_at >= ?", Date.today + 6.hours)
+  end
 end

@@ -2,15 +2,20 @@
 
 eight:
   volume: 8
-  created_at: <%= 26.hours.ago %>
+  created_at: <%= Date.yesterday + 7.hours %>
+  user: alex
+
+five_am:
+  volume: 8
+  created_at: <%= Date.today + 5.hours %>
   user: alex
 
 twenty_six:
   volume: 26
-  created_at: <%= 10.hours.ago %>
+  created_at: <%= Date.today + 7.hours %>
   user: alex
 
 most_recent:
   volume: 8
-  created_at: <%= 5.minutes.ago %>
+  created_at: <%= Date.today + 10.hours %>
   user: alex

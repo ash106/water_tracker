@@ -40,4 +40,11 @@ class DrinkTest < ActiveSupport::TestCase
     4.times { drinks << Drink.new(volume: 8) }
     assert_equal 32, Drink.total(drinks)
   end
+
+  test "today should return only drinks created after 6 am today" do
+    refute_includes Drink.today, drinks(:eight)
+    refute_includes Drink.today, drinks(:five_am)
+    assert_includes Drink.today, drinks(:twenty_six)
+    assert_includes Drink.today, drinks(:most_recent)
+  end
 end

@@ -1,4 +1,4 @@
 <li class="list-group-item clearfix">
-  <h3 class="content"><%= daily_drink.created_at.localtime.strftime("%l:%M %P") %> &harrw; <%= daily_drink.volume %> oz</h3>
+  <h3 class="content"><%= daily_drink.created_at.strftime("%l:%M %P") %> &harrw; <%= daily_drink.volume %> oz</h3>
   <%= link_to 'delete', daily_drink, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm pull-right" %>
 </li>

@@ -1,4 +1,5 @@
 alex:
   email: alex@gmail.com
+  day_start_time: 6
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(email: "user@example.com", password: "secret", password_confirmation: "secret")
+    @user = User.new(email: "user@example.com", day_start_time: 6, password: "secret", password_confirmation: "secret")
   end
 
   test "should be valid" do
@@ -42,5 +42,10 @@ class UserTest < ActiveSupport::TestCase
     assert_difference 'Drink.count', -1 do
       @user.destroy
     end
+  end
+
+  test "day_start_time should be present" do
+    @user.day_start_time = nil
+    assert_not @user.valid?
   end
 end

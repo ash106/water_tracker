@@ -2,6 +2,9 @@
   <%= f.alert_message "Please fix the errors below." %>
 
   <%= f.email_field :email %>
+  <% if @user.persisted? %>
+    <%= f.select :day_start_time, User::DAY_START_TIMES, label: "My day starts at" %>
+  <% end %>
   <%= f.password_field :password, help: "Must be at least 6 characters" %>
   <%= f.password_field :password_confirmation, label: "Confirm Password" %>
   <div class="text-center">

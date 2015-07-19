@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.day_start_time = User::DEFAULT_DAY_START_TIME
 
     respond_to do |format|
       if @user.save
@@ -72,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :day_start_time, :password, :password_confirmation)
     end
 end

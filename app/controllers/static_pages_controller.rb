@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   def home
     if logged_in?
       @drink = current_user.drinks.build(volume: 8)
-      @daily_drinks = Drink.today
+      @daily_drinks = Drink.today(current_user.day_start_time)
       @total = Drink.total(@daily_drinks)
     end
   end

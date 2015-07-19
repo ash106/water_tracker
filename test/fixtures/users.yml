@@ -3,3 +3,9 @@ alex:
   day_start_time: 6
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+
+craig:
+  email: craig@twobagsbrown.com
+  day_start_time: 11
+  salt: <%= salt = "9pY5zUA2y8ymCGGMtpHi" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("twobags", salt) %>

@@ -9,7 +9,7 @@ class Drink < ActiveRecord::Base
     drinks.map(&:volume).sum
   end
 
-  def self.today(num_of_hours)
-    Drink.where("created_at >= ?", Date.today + num_of_hours.hours)
+  def self.today(user)
+    user.drinks.where("created_at >= ?", Date.today + user.day_start_time.hours)
   end
 end

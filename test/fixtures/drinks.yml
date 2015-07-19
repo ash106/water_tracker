@@ -15,6 +15,11 @@ twenty_six:
   created_at: <%= Date.today + 7.hours %>
   user: alex
 
+craig:
+  volume: 8
+  created_at: <%= Date.today + 9.hours %>
+  user: craig
+
 most_recent:
   volume: 8
   created_at: <%= Date.today + 10.hours %>

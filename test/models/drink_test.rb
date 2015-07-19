@@ -41,12 +41,14 @@ class DrinkTest < ActiveSupport::TestCase
     assert_equal 32, Drink.total(drinks)
   end
 
-  test "today should return only drinks created after day_start_time" do
-    refute_includes Drink.today(@user.day_start_time), drinks(:eight)
-    refute_includes Drink.today(@user.day_start_time), drinks(:five_am)
-    assert_includes Drink.today(@user.day_start_time), drinks(:twenty_six)
-    assert_includes Drink.today(@user.day_start_time), drinks(:most_recent)
+  test "today should return only drinks for the current user created after day_start_time" do
+    refute_includes Drink.today(@user), drinks(:eight)
+    refute_includes Drink.today(@user), drinks(:five_am)
+    refute_includes Drink.today(@user), drinks(:craig)
+    assert_includes Drink.today(@user), drinks(:twenty_six)
+    assert_includes Drink.today(@user), drinks(:most_recent)
     # Change day_start_time to 5 AM and verify correct drink is included
-    assert_includes Drink.today(5), drinks(:five_am)
+    @user.day_start_time = 5
+    assert_includes Drink.today(@user), drinks(:five_am)
   end
 end

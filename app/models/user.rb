@@ -11,7 +11,13 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     uniqueness: { case_sensitive: false }
   validates :day_start_time, presence: true
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, if: :new_user?
   validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, if: :new_user?
+
+  private
+
+    def new_user?
+      new_record?
+    end
 end

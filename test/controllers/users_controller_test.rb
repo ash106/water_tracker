@@ -53,13 +53,13 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should redirect update when not logged in" do
-    patch :update, id: @user, user: { email: "ralex@gmail.com", day_start_time: 11, password: "secret", password_confirmation: "secret" }
+    patch :update, id: @user, user: { email: "ralex@gmail.com", day_start_time: 11 }
     assert_redirected_to login_path
   end
 
   test "should update user" do
     login_user(@user)
-    patch :update, id: @user, user: { email: "ralex@gmail.com", day_start_time: 11, password: "secret", password_confirmation: "secret" }
+    patch :update, id: @user, user: { email: "ralex@gmail.com", day_start_time: 11 }
     assert_redirected_to user_path(assigns(:user))
   end
 
